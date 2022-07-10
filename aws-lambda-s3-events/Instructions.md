@@ -18,7 +18,7 @@ Time to learn a bit about Lambda Events and Lambda Functions.
 
 ![image](https://user-images.githubusercontent.com/86648102/178158272-d827f107-6d82-45d3-b408-ce68ae3a6f6b.png)
 
--switch to the JSON tab, delete everything and replace with this template ( https://raw.githubusercontent.com/acantril/learn-cantrill-io-labs/master/00-aws-simple-demos/aws-lambda-s3-events/01_LABSETUP/policy/s3pixelator.json )
+- switch to the JSON tab, delete everything and replace with this template ( https://raw.githubusercontent.com/acantril/learn-cantrill-io-labs/master/00-aws-simple-demos/aws-lambda-s3-events/01_LABSETUP/policy/s3pixelator.json )
 
 ![image](https://user-images.githubusercontent.com/86648102/178158310-ba77df67-5a7e-4115-8b27-08cb5393e7a7.png)
 
@@ -31,5 +31,14 @@ Time to learn a bit about Lambda Events and Lambda Functions.
 
 ![image](https://user-images.githubusercontent.com/86648102/178158453-5f6bd33f-5466-4863-a794-3b2401b89b88.png)
 
+- click Review Policy (errors will appear in case something is not right
+- add Policy Name and Create
 
+![image](https://user-images.githubusercontent.com/86648102/178158607-952d946d-d4a6-4cf9-9805-a4d6fa1aa4b0.png)
+
+3) Create the Lambda Function 
+
+- do the settings from below while using the role we just created:
+
+![image](https://user-images.githubusercontent.com/86648102/178158829-d2b624a6-e527-49f7-a861-16bd158dc6c8.png)
 
