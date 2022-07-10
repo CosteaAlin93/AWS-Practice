@@ -1,7 +1,7 @@
 ## Time to learn a bit about Lambda Events and Lambda Functions.
 
 ### Part of Adrian Cantrill aws-simple-demos
-
+- learn about simple S3 event-driven actions event using a lambda for image processing  
 ![image](https://user-images.githubusercontent.com/86648102/178159898-d9a07001-bca1-4e38-9705-09bdddf1ee64.png)
 
 
