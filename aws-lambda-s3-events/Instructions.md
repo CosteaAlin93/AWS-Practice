@@ -42,3 +42,31 @@ Time to learn a bit about Lambda Events and Lambda Functions.
 
 ![image](https://user-images.githubusercontent.com/86648102/178158829-d2b624a6-e527-49f7-a861-16bd158dc6c8.png)
 
+- upload the zip file needed for the lambda to run
+
+![image](https://user-images.githubusercontent.com/86648102/178158924-760dde06-d8b0-49da-9cab-7ce08dd17ec7.png)
+
+- download it from Adrian's repo
+
+https://github.com/acantril/learn-cantrill-io-labs/blob/master/00-aws-simple-demos/aws-lambda-s3-events/01_LABSETUP/my-deployment-package.zip
+
+![image](https://user-images.githubusercontent.com/86648102/178158980-2156b7f8-5af8-4ddd-807c-3e7ce4b504b5.png)
+
+
+4) Configure the Lambda Function and Trigger
+
+- in your function to the below actions and add environment variable
+
+![image](https://user-images.githubusercontent.com/86648102/178159050-3cd06786-1cf9-4e30-95dc-6bef411adb94.png)
+
+- - for Key, use processed_bucked and for Value, use the name of the bucket you created in the 1st step
+
+![image](https://user-images.githubusercontent.com/86648102/178159140-44f5cbf0-4d8d-4914-b237-4c5916c5309b.png)
+
+- some additional settings regarding Timeout
+
+![image](https://user-images.githubusercontent.com/86648102/178159208-ecbd1512-7d41-401d-986c-d39e4bbc6ab8.png)
+![image](https://user-images.githubusercontent.com/86648102/178159244-a0925959-31a2-4cd7-b20a-c6b0f77966b2.png)
+
+-  
+
