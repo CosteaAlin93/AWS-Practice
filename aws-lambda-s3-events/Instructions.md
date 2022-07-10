@@ -3,7 +3,33 @@ Time to learn a bit about Lambda Events and Lambda Functions.
 1) Create 2 S3 Buckets - Source and Destination
 - default settings will be fine
 
-![image](https://user-images.githubusercontent.com/86648102/178157942-c2a28082-61c0-417a-bdb8-e76851092e08.png)
+![image](https://user-images.githubusercontent.com/86648102/178157976-98cc4e1d-4ac2-48f6-8e42-7e8df0f3e2c9.png)
+
+2) Create Lambda Role
+- everything in AWS runs only if allowed...so we need an AWS IAM role for this lambda function for it to have access to our needed resources
+
+![image](https://user-images.githubusercontent.com/86648102/178158092-57e2a62a-7923-4e62-961b-d805903dc1a0.png)
+
+- for the following 2 steps, click Next.
+
+![image](https://user-images.githubusercontent.com/86648102/178158215-c9e3c782-c4a3-4d49-a32c-a520e1a1cd65.png)
+
+- click on the newly created role and then Add Permissions > Create inline policy
+
+![image](https://user-images.githubusercontent.com/86648102/178158272-d827f107-6d82-45d3-b408-ce68ae3a6f6b.png)
+
+-switch to the JSON tab, delete everything and replace with this template ( https://raw.githubusercontent.com/acantril/learn-cantrill-io-labs/master/00-aws-simple-demos/aws-lambda-s3-events/01_LABSETUP/policy/s3pixelator.json )
+
+![image](https://user-images.githubusercontent.com/86648102/178158310-ba77df67-5a7e-4115-8b27-08cb5393e7a7.png)
+
+- update template with your current infos (S3 buckets ARNs
+- - for buckets: 
+
+![image](https://user-images.githubusercontent.com/86648102/178158381-93eb219a-14b3-42e1-9cca-669fcd8e4d82.png)
+
+- - for account ID:
+
+![image](https://user-images.githubusercontent.com/86648102/178158453-5f6bd33f-5466-4863-a794-3b2401b89b88.png)
 
 
 
