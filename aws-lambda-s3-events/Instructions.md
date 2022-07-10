@@ -61,12 +61,16 @@ https://github.com/acantril/learn-cantrill-io-labs/blob/master/00-aws-simple-dem
 
 - - for Key, use processed_bucked and for Value, use the name of the bucket you created in the 1st step
 
-![image](https://user-images.githubusercontent.com/86648102/178159140-44f5cbf0-4d8d-4914-b237-4c5916c5309b.png)
+![image](https://user-images.githubusercontent.com/86648102/178159436-d538bd6e-ea26-4d70-a6e9-0a1f04170e65.png)
 
 - some additional settings regarding Timeout
 
 ![image](https://user-images.githubusercontent.com/86648102/178159208-ecbd1512-7d41-401d-986c-d39e4bbc6ab8.png)
 ![image](https://user-images.githubusercontent.com/86648102/178159244-a0925959-31a2-4cd7-b20a-c6b0f77966b2.png)
 
--  
+- time to add the trigger of this function
+
+![image](https://user-images.githubusercontent.com/86648102/178159338-26c3ebaf-a969-42f1-851d-f720a16b508f.png)
+
+Double-check all is set properly. 
 
