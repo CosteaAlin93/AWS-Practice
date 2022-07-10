@@ -1,2 +1,2 @@
 # AWS-Practice
-UpSkill AWS Knowledge
+AWS Tutorials
