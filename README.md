@@ -1,2 +1,2 @@
-# AWS-Practice
+# aws-practice
 AWS Tutorials
