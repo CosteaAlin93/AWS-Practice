@@ -40,7 +40,7 @@
 
 
 
-<details><summary> 2) Install GITLAB runner  </summary>
+<details><summary> 2) Install dependencies </summary>
 Now that we have access to the instance(terminal), it's time to configure it.
  
 ### Actions:
@@ -71,7 +71,7 @@ Now that we have access to the instance(terminal), it's time to configure it.
  
  - reboot our instance (wait 2 3 minutes, then reconnect from EC2 window)
  
- 'sudo reboot'
+ `sudo reboot`
   
  - right after reconnecting, check id docker is already running
  
@@ -81,23 +81,99 @@ Now that we have access to the instance(terminal), it's time to configure it.
  
  `docker run hello-world`
  
-![Uploading image.png…]()
-
- 
- 
- 
- 
- 
-</details>
-
-
-
-<details><summary> 3) Configure it to run with Gitlab  </summary>
+![image](https://user-images.githubusercontent.com/86648102/178800278-a0c29642-17c9-4e74-b1f1-f72ad87151a3.png)
 
 </details>
 
 
 
+<details><summary> 3) Install GITLAB runner </summary>
+Our machine has now the base software needed. It's time to continue.
+ 
+ ### Actions:
+ - download the gitlab-runner
+ 
+ `sudo curl -L --output /usr/local/bin/gitlab-runner "https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64"`
+ 
+ - give it permission to execute
+ 
+ `sudo chmod +x /usr/local/bin/gitlab-runner`
+ 
+ - create a Gitlab CI user:
+ 
+ `sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash`
+ 
+ - install and run as service:
+ 
+ `sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner`
+ 
+ - check if working and enable it so it starts automatically with the machine (same we did with docker)
+ 
+ `systemctl status gitlab-runner.service`
+ `sudo systemctl enable gitlab-runner.service`
+ 
+ </details>
 
 
+<details><summary> 4) Configure it to run with Gitlab  </summary>
+ Time for some settings in your Gitlab account
+ 
+ ### Actions:
+ 
+ - create Gitlab group (so the runner will be available for the whole group, not just for a user)
+ ![image](https://user-images.githubusercontent.com/86648102/178804107-508d829b-dc4d-4ffc-9e04-9c91534bf4e3.png)
+
+ - name the group, set it as Private and scroll down and click on 'Create group'
+ 
+ ![image](https://user-images.githubusercontent.com/86648102/178804364-4ac6db8b-509f-4f5a-befc-4310b16d757a.png)
+
+ - click Settings >> CI/CD
+ 
+ ![image](https://user-images.githubusercontent.com/86648102/178804646-0e826a2c-cc70-42c0-be10-8a77e01db343.png)
+
+ - expand the 'Runners' section, disable 'shared runners for this group' and click on 'Take me there' to the new group runners view
+ 
+ ![image](https://user-images.githubusercontent.com/86648102/178804968-243faa58-7be2-4a07-9bda-6d396af31ab8.png)
+ ![image](https://user-images.githubusercontent.com/86648102/178805121-d33be8f5-1137-4633-b5b1-f43fd5f35be7.png)
+
+ - now back on the EC2 terminal, run the following:
+ 
+ `sudo gitlab-runner register`
+ 
+ - and enter `https://gitlab.com/` as GitLab instance URL 
+ - and the token from the website as registration token
+ 
+![image](https://user-images.githubusercontent.com/86648102/178806007-e93862e7-a1f9-4cd5-9988-edb80bcad7af.png)
+
+ - an optional description : `testing_aws_ec2_runner`
+ - tags : `testing_aws_ec2_runner`
+ - optional maintenance note : `testing_aws_ec2_runner`
+ - enter an executor: `docker`
+ - default docker image : `alpine`
+ 
+ Congrats! By now your runner should be registered successfully.
+ 
+ ![image](https://user-images.githubusercontent.com/86648102/178806754-459597f0-4c33-4fee-ba1b-6cfaa0140b36.png)
+
+ - one more step here...check the runner status
+ 
+ `sudo gitlab-runner status`
+ 
+ - let's get back to Gitlab page and on our runner, click 'Edit' 
+ 
+![image](https://user-images.githubusercontent.com/86648102/178807302-62c9b9f4-0144-4f8e-9a6b-fcbc129a34b3.png)
+
+ - tick the 'run untagged jobs'
+ 
+ ![image](https://user-images.githubusercontent.com/86648102/178807458-30eafeed-1e9e-409c-9ec4-1e5990405e3d.png)
+
+ - 
+ 
+ 
+ 
+ 
+ 
+ 
+
+</details>
 
