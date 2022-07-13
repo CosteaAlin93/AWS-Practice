@@ -163,17 +163,65 @@ Our machine has now the base software needed. It's time to continue.
  
 ![image](https://user-images.githubusercontent.com/86648102/178807302-62c9b9f4-0144-4f8e-9a6b-fcbc129a34b3.png)
 
- - tick the 'run untagged jobs'
+ - tick the 'run untagged jobs' and 'Save'
  
  ![image](https://user-images.githubusercontent.com/86648102/178807458-30eafeed-1e9e-409c-9ec4-1e5990405e3d.png)
 
- - 
- 
- 
- 
- 
- 
- 
-
 </details>
 
+<details><summary> 5) Test our runner  </summary>
+ Ok, we have it set...let's put it to work.
+ 
+ ### Actions:
+ 
+ - from our group, create on 'New project'
+ 
+ ![image](https://user-images.githubusercontent.com/86648102/178808007-d9ed3c22-43d7-40ed-8cae-3f600caf733f.png)
+
+ - select 'Create blank project'
+ 
+ ![image](https://user-images.githubusercontent.com/86648102/178808080-44d0a726-4045-4961-89a5-b231e53f68d8.png)
+
+ - name the project, add a description(optional) and keep it as Private
+ 
+ ![image](https://user-images.githubusercontent.com/86648102/178808341-8c11b69c-0c65-4ccb-8bb9-6687ab098025.png)
+
+ - on the next window, create New File  
+ 
+ ![image](https://user-images.githubusercontent.com/86648102/178808455-da3c0944-5b53-4669-8404-f188c7cd0fe8.png)
+
+ - name the file, select 'gitlab-ci.yml' ,add the following job snippet and commit:
+ 
+ ```
+ build:
+    image: alpine
+    script:
+        - echo "Hello" > index.html
+    artifacts:
+        paths:
+            - index.html
+ ```
+ 
+ - hover over 'CI/CD' > Pipelines
+ 
+ ![image](https://user-images.githubusercontent.com/86648102/178809190-6d6e2a55-43ee-4a15-a5e3-fe7c9e5843e3.png)
+
+ - our build finished successfully
+ 
+ ![image](https://user-images.githubusercontent.com/86648102/178809411-b38e1ca4-bf61-49a8-82a3-4255588f3b35.png)
+
+ - let's see some logs; all has been done just as we set it
+ 
+ ![image](https://user-images.githubusercontent.com/86648102/178809938-59bc6ea8-6dd2-4f80-abed-d321a41739ff.png)
+
+ - artifacts are available for downloading:
+ 
+ ![image](https://user-images.githubusercontent.com/86648102/178810181-32e60bab-2d5d-40a2-8098-c3835121633e.png)
+ 
+</details>
+ 
+<details><summary> 6) Congratulations  </summary>
+ 
+ ### Thank you for getting to this point; now you have a Gitlab runner configured on an EC2 instance! Let me know if you got issues while doing any of the steps!
+ 
+</details>
