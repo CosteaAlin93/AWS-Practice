@@ -16,8 +16,7 @@
  ### Actions:
  - From the EC2 page, click on 'Launch instance' (region is not important)
  ![image](https://user-images.githubusercontent.com/86648102/178793158-06589ec0-906b-4e95-969d-e054b8af3347.png)
- - name the instance
- - choose Ubuntu
+ - name the instance and choose Ubuntu
 ![image](https://user-images.githubusercontent.com/86648102/178793705-845ccf75-b4f7-4790-b295-8c7f3acd73f6.png)
  - let instance type as 't2 micro'
  - click on 'Create new key pair'
@@ -87,7 +86,7 @@ Now that we have access to the instance(terminal), it's time to configure it.
 
 
 
-<details><summary> 3) Install GITLAB runner </summary>
+<details><summary> 3) Install Gitlab runner </summary>
 Our machine has now the base software needed. It's time to continue.
  
  ### Actions:
